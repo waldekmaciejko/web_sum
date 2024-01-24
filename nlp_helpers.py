@@ -8,30 +8,35 @@ import requests
 
 pprint.pprint("="*80)
 
-nlp = spacy.load("pl_core_news_md")
-stopwords = nlp.Defaults.stop_words
+#stopwords = nlp.Defaults.stop_words
 
 # tokenizacja + lematyzacja
 def gen_spacy_lemma(text):
+
   yield " ".join(token.lemma_ for token in text.doc)
 
 # extract sentences
 def split_text(text):
+
+  nlp = spacy.load("pl_core_news_md")
   text = nlp(text)
   text = text.sents
   return [item.text for item in text]
 
 # count popularity of words
 def score_sentence(sentence, words_popularity):
+
   return sum(map(lambda x: words_popularity.get(x, 0), sentence.split()))
 
 def extract_title(url: str):
+
   request_site = requests.get(url)
   soup = BeautifulSoup(request_site.text, 'html.parser')
   title = soup.title.text
   return title
 
 def web_scrapping(url):
+    
     #nlp = spacy.load("pl_core_news_md")
     #polish_spacy_stop_wrd = nlp.Defaults.stop_words
 
@@ -43,4 +48,5 @@ def web_scrapping(url):
     return text
 
 if __name__ == "__main__":
+  
   extract_title("https://wpolityce.pl/polityka/674881-sztuka-przejmowania-wladzy")

@@ -24,6 +24,7 @@ def index():
 
 @app.route('/summary', methods=['GET', 'POST'])
 def summary():
+    
     url=''
     
     if 'for_link_text' in request.form:
