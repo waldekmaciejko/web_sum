@@ -8,6 +8,7 @@ import nlp_helpers
 
 
 def summary_word_freq(path: str):
+
   #pprint.pprint("="*80)
   # We need 3 forms of text
     # a) normalized and lemmatized - to count number of occurance each words in whole text

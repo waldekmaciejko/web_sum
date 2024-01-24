@@ -8,7 +8,9 @@ import requests
 
 pprint.pprint("="*80)
 
-#stopwords = nlp.Defaults.stop_words
+nlp = spacy.load("pl_core_news_md")
+stopwords = nlp.Defaults.stop_words
+
 
 # tokenizacja + lematyzacja
 def gen_spacy_lemma(text):
@@ -18,7 +20,6 @@ def gen_spacy_lemma(text):
 # extract sentences
 def split_text(text):
 
-  nlp = spacy.load("pl_core_news_md")
   text = nlp(text)
   text = text.sents
   return [item.text for item in text]
@@ -48,5 +49,5 @@ def web_scrapping(url):
     return text
 
 if __name__ == "__main__":
-  
+
   extract_title("https://wpolityce.pl/polityka/674881-sztuka-przejmowania-wladzy")
