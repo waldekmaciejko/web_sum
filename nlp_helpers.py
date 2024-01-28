@@ -8,7 +8,7 @@ import requests
 
 pprint.pprint("="*80)
 
-nlp = spacy.load("pl_core_news_md")
+nlp = spacy.load("pl_core_news_sm")
 stopwords = nlp.Defaults.stop_words
 
 
@@ -50,4 +50,4 @@ def web_scrapping(url):
 
 if __name__ == "__main__":
 
-  extract_title("https://wpolityce.pl/polityka/674881-sztuka-przejmowania-wladzy")
+  print(extract_title("https://wpolityce.pl/polityka/674881-sztuka-przejmowania-wladzy"))

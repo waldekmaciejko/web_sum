@@ -20,6 +20,7 @@ tokenizer = BertTokenizer.from_pretrained("dkleczek/bert-base-polish-cased-v1")
 model = BertModel.from_pretrained("dkleczek/bert-base-polish-cased-v1")
 
 def summary_BERT(url: str):
+    
     # 0. web scrapping
     #url = "https://wpolityce.pl/polityka/674881-sztuka-przejmowania-wladzy"
     text = nlp_helpers.web_scrapping(url)

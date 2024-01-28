@@ -17,7 +17,7 @@ def summary_word_freq(path: str):
     # c) original text (out of '\n' and other edition signs) - to take most important sentence in original form
 
   # 0. web scrapping
-  nlp = spacy.load("pl_core_news_md")
+  nlp = spacy.load("pl_core_news_sm")
   #url = "https://wpolityce.pl/polityka/674881-sztuka-przejmowania-wladzy"
   url = path
   text = nlp_helpers.web_scrapping(url)
