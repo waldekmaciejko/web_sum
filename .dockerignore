@@ -1,0 +1,5 @@
+/__pychache__/
+/.git/
+Dockerfile
+.dockerignore
+.gitignore
