@@ -5,7 +5,11 @@ This is example of use two NLP methods to make a summary of political text from 
 
 In two above methods BeautifulSoup was used to extract raw text from web. 
 
-- To build docker image use command:  _docker build -t summary/bertfreq:v1 ._ <br />
-<br />
-- To build docker container use command:
-_docker run -d --name summary-politicaltext-app -p 5000:5000 summary/bertfreq:v1_
+To start localy:
+1. python -m venv venv
+2. source ./venv/bin/activate (to deactivate env: deactivate, to deactivate conda env: conda deactivate)
+3. pip install -r requirements.txt
+4. python -m spacy download pl_core_news_sm
+5. flask run
+
+Note: it's working only for wpolityce.pl - some web srapping problems
